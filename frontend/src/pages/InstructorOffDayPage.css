@@ -1,0 +1,337 @@
+.instructor-offday-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  font-size: 1.75rem;
+}
+
+.page-header p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Instructor Section */
+.instructor-section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+}
+
+.instructor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.instructor-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.instructor-item:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.instructor-item.selected {
+  background: #e7f3ff;
+  border-color: #2196f3;
+  font-weight: 500;
+}
+
+.instructor-name {
+  flex: 1;
+}
+
+.selected-indicator {
+  color: #2196f3;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Off Day Section */
+.offday-section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.offday-section h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+}
+
+/* Add Off Day Form */
+.add-offday-form {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group > label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.date-range-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.date-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.date-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.date-input-wrapper input[type="date"] {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.date-input-wrapper input[type="date"]:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.date-input-wrapper input[type="date"]:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.date-separator {
+  font-size: 1.25rem;
+  color: #6c757d;
+  padding-bottom: 0.625rem;
+  font-weight: 500;
+}
+
+.hint-text {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.input-group input[type="date"] {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.input-group input[type="date"]:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.input-group input[type="date"]:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.btn-add {
+  padding: 0.625rem 1.5rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-add:hover:not(:disabled) {
+  background: #1976d2;
+}
+
+.btn-add:disabled {
+  background: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Off Days List */
+.offday-list-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.offday-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offday-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.offday-item:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.offday-date {
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+.btn-delete {
+  padding: 0.375rem 0.625rem;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  opacity: 0.6;
+}
+
+.btn-delete:hover:not(:disabled) {
+  background: #fee;
+  opacity: 1;
+}
+
+.btn-delete:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+/* Loading and Empty States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.empty-state .hint {
+  font-size: 0.85rem;
+  color: #adb5bd;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .instructor-offday-page {
+    padding: 1rem;
+  }
+
+  .content-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .page-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .date-range-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .date-input-wrapper {
+    min-width: 100%;
+  }
+
+  .date-separator {
+    text-align: center;
+    padding: 0.25rem 0;
+  }
+
+  .btn-add {
+    width: 100%;
+  }
+}
