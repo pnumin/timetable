@@ -102,44 +102,20 @@
 
 ```mermaid
 graph TD
-    subgraph Client [Client (Browser)]
-        A[
-            <strong>React SPA (Port 3000)</strong><br/>
-            - 엑셀 업로드<br/>
-            - 선배정<br/>
-            - 시간표 생성<br/>
-            - 시간표 조회<br/>
-            - 교과 관리<br/>
-            - 출력
-        ]
+    subgraph Client
+        A["React SPA (Port 3000)<br/>- 엑셀 업로드<br/>- 선배정<br/>- 시간표 생성<br/>- 시간표 조회<br/>- 교과 관리<br/>- 출력"]
     end
 
-    subgraph Server [Server (Node.js/Express - Port 5000)]
+    subgraph Server
         direction TB
-        B1[
-            <strong>API Layer</strong><br/>
-            - Routes: 요청 라우팅 및 검증
-        ]
-        B2[
-            <strong>Business Logic Layer</strong><br/>
-            - Services: 비즈니스 로직 처리<br/>
-            - Validators: 제약조건 검증
-        ]
-        B3[
-            <strong>Data Access Layer</strong><br/>
-            - Repositories: 데이터베이스 액세스
-        ]
+        B1["API Layer<br/>- Routes: 요청 라우팅 및 검증"]
+        B2["Business Logic Layer<br/>- Services: 비즈니스 로직 처리<br/>- Validators: 제약조건 검증"]
+        B3["Data Access Layer<br/>- Repositories: 데이터베이스 액세스"]
         B1 --> B2 --> B3
     end
 
-    subgraph Database [Database (SQLite)]
-        C[
-            - courses<br/>
-            - instructors<br/>
-            - schedules<br/>
-            - off_days<br/>
-            - school_holidays
-        ]
+    subgraph Database
+        C["- courses<br/>- instructors<br/>- schedules<br/>- off_days<br/>- school_holidays"]
     end
 
     A -- HTTP/REST API --> B1
